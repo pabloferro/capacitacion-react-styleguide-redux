@@ -5,7 +5,9 @@ import TodoList from './app/screens/TodoList';
 class App extends Component {
   render() {
     return (
-      <TodoList />
+      <div style={{ marginLeft: 40 }} >
+        <TodoList />
+      </div>
     );
   }
 }

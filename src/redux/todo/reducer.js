@@ -1,3 +1,5 @@
+import Immutable from 'seamless-immutable';
+
 import {
   ADD_TODO,
   TOGGLE_TODO
@@ -5,17 +7,16 @@ import {
 
 const initialState = [];
 
-const todosReducer = (state = initialState, action) => {
+const todosReducer = (state = Immutable(initialState), action) => {
   switch (action.type) {
     case ADD_TODO:
-      return [
-        ...state,
+      return state.concat(
         {
           id: action.payload.id,
           text: action.payload.text,
           completed: false
         }
-      ]
+      );
     case TOGGLE_TODO:
       return state.map(todo =>
         (todo.id === action.payload.id)
