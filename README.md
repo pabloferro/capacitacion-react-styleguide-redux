@@ -1,4 +1,3 @@
-
 ## Capacitación React styleguide
 
 ### Redux thunk
