@@ -5,7 +5,11 @@ import Todo from './components/Todo';
 import AddTodo from './components/AddTodo';
 import Filters from './components/Filters';
 
-function TodoList({ todos, onTodoClick, onAddTodo }) {
+function TodoList({ todos, onTodoClick, onAddTodo, loading }) {
+  if (loading) {
+    return (<span>loading...</span>);
+  }
+
   return (
     <div>
       <h1>To-do</h1>
