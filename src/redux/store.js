@@ -1,8 +1,12 @@
 import { createStore, combineReducers , applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+import { createLogicMiddleware } from 'redux-logic';
 
 import todo from './todo/reducer';
 import visibilityFilter from './visibilityFilter/reducer';
+
+import arrLogic from './logic';
+
+const logicMiddleware = createLogicMiddleware(arrLogic);
 
 const reducers = combineReducers({
   todo,
@@ -11,7 +15,7 @@ const reducers = combineReducers({
 
 const store = createStore(
   reducers,
-  applyMiddleware(thunk)
+  applyMiddleware(logicMiddleware)
 );
 
 export default store;

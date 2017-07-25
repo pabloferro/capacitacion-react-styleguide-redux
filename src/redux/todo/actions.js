@@ -26,21 +26,10 @@ export const toggleTodo = (id) => {
   };
 }
 
-export const fetchingTodos = () => {
+export const fetchTodos = () => {
   return {
     type: FETCH_TODOS,
   };
-}
-
-export const fetchTodos = () => {
-  return dispatch => {
-    dispatch(fetchingTodos());
-    TodoService.getTodos().then(response => {
-      dispatch(fetchTodosSuccess(response.data));
-    }).catch(error => {
-      dispatch(fetchTodosFailure(error));
-    });
-  }
 }
 
 export const fetchTodosSuccess = (items) => {
