@@ -1,0 +1,7 @@
+{
+  "todos": [
+    { "id": 1, "text": "Explicar redux", "completed": true },
+    { "id": 2, "text": "Mostrar seamless-immutable", "completed": true },
+    { "id": 3, "text": "Explicar thunk y logic", "completed": false }
+  ]
+}
